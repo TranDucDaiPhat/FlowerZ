@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowerZ</title>
+    <link rel="icon" type="image/png" href="res/icon/flower-icon.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div id="nav-bar-flower" class="nav-bar-item">
+            <img class="navbar-icon" src="./res/icon/flower-icon.png" alt="">
+            <p id="">123</p>
+            <div id="flower-info" class="menu nav-bar-item-info">
+                <h3 style="padding: 0 0 8px 5px;">Hoa</h3>
+                <div style="display: flex;">
+                    <p style="flex: 2;">D: 1</p>
+                    <p style="flex: 3;">S: 1</p>
+                </div>
+                <div style="display: flex;">
+                    <p style="flex: 2;">C: 1</p>
+                    <p style="flex: 3;">Thần Thoại: 1</p>
+                </div>
+                <div style="display: flex;">
+                    <p style="flex: 2;">B: 1</p>
+                    <p style="flex: 3;">Chí Tôn: 1</p>
+                </div>
+                <p>A: 1</p>
+                <p>Tổng: 3</p>
+                <p>Độc Nhất: 3</p>
+                <p class="title-info">• Nhận được khi trích xuất năng lượng hoặc mua từ shop</p>
+            </div>
+        </div>
+        <div id="nav-bar-gold-coin" class="nav-bar-item">
+            <img class="navbar-icon" src="./res/icon/gold-coin.png" alt="">
+            <!-- giới hạn tối đa -->
+            <p id="">999999</p>
+
+            <div id="gold-coin-info" class="menu nav-bar-item-info gold-coin-info">
+                <h3 style="padding: 0 0 8px 5px;">Vàng</h3>
+                <p>Thu Nhập: 15v/h</p>
+                <p class="title-info">• Nhận được từ thu nhập của hoa hoặc vật phẩm</p>
+            </div>
+        </div>
+        <div id="nav-bar-red-coin" class="nav-bar-item">
+            <img class="navbar-icon" src="./res/icon/red-coin.png" alt="">
+            <p id="">3</p>
+
+            <div id="red-coin-info" class="menu nav-bar-item-info red-coin-info">
+                <h3 style="padding: 0 0 8px 5px;">Xu Hiếm</h3>
+                <p>Thu Nhập: 1/ngày</p>
+                <p class="title-info">• Nhận được từ thu nhập vật phẩm hoặc bán các loại hoa hiếm</p>
+            </div>
+        </div>
+
+        <div id="nav-bar-water" class="nav-bar-item" style="flex: 6;">
+            <img class="navbar-icon" src="./res/icon/drop.png" alt="">
+            <div style="display: flex;">
+                <p id="">3/15</p>
+                <span style="font-size: 16px; margin: 6px 0 0 5px; color: rgb(189, 188, 188);">155s</span>
+            </div>
+
+            <div id="water-info" class="menu nav-bar-item-info water-info">
+                <h3 style="padding: 0 0 8px 5px;">Nước</h3>
+                <p>Sức chứa: 15</p>
+                <p>Thời gian hồi: 125s</p>
+                <p class="title-info">• Dùng nước để tưới hoa, giúp hoa tăng level khi đủ lượng nước.</p>
+            </div>
+        </div>
+
+        <button id="toggleBtn" class="toggle-btn">☰</button>
+
+        <aside id="sidebar" class="menu sidebar">
+            <div class="tongle-menu">
+                <div class="menu-item">
+                    <img src="./res/icon/smoke.png" alt="" srcset="">
+                    <button class="btn-nav-item">Trích Xuất</button>
+                </div>
+                <div class="menu-item">
+                    <img src="./res/icon/backbag.png" alt="" srcset="">
+                    <button class="btn-nav-item">Kho Đồ</button>
+                </div>
+                <div class="menu-item">
+                    <img src="./res/icon/up-arrow.png" alt="" srcset="">
+                    <button class="btn-nav-item">Nâng Cấp</button>
+                </div>
+                <div class="menu-item">
+                    <img src="./res/icon/spellbook.png" alt="" srcset="">
+                    <button class="btn-nav-item">Bộ Sưu Tập</button>
+                </div>
+                <div class="menu-item">
+                    <img src="./res/icon/dollar-symbol.png" alt="" srcset="">
+                    <button class="btn-nav-item">Cửa Hàng</button>
+                </div>
+                <div class="menu-item">
+                    <img src="./res/icon/award.png" alt="" srcset="">
+                    <button class="btn-nav-item">Thành Tựu</button>
+                </div>
+                <div class="menu-item">
+                    <img src="./res/icon/calendar.png" alt="" srcset="">
+                    <button class="btn-nav-item">Điểm Danh</button>
+                </div>
+            </div>
+        </aside>
+    </nav>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div class="content">
+        <div class="title">
+            <h3>Hoa</h3>
+            <button class="btn-thu-nhap">Thu nhập</button>
+        </div>
+        <div>
+            <div class="item-row">
+                <div class="item">
+                    <img class="item-img" src="res/flowers/flower-2.png" alt="" srcset="">
+                    <button class="item-button">Tưới nước</button>
+                    <img class="drop" src="res/icon/drop.png" alt="" srcset="">
+                </div>
+                <img class="item-img" src="res/flowers/flower-9.png" alt="" srcset="">
+                <img class="item-img" src="res/flowers/flower-11.png" alt="" srcset="">
+            </div>
+            <div class="item-row">
+                <img class="item-img" src="res/flowers/flower-2.png" alt="" srcset="">
+                <img class="item-img" src="res/flowers/flower-9.png" alt="" srcset="">
+                <img class="item-img" src="res/flowers/flower-11.png" alt="" srcset="">
+            </div>
+            <div class="item-row">
+                <img class="empty-flower-img" src="res/icon/empty-flower.png" alt="" srcset="">
+                <div class="add-flower-item">
+                    <img class="empty-flower-img add-flower-img" src="res/icon/add-flower.png" alt="" srcset="">
+                    <p>25v</p>
+                </div>
+                <div class="empty"></div>
+            </div>
+        </div>
+
+        <hr class="line">
+
+        <div class="title">
+            <h3>Vật phẩm</h3>
+            <button class="btn-thu-nhap">Thu nhập</button>
+        </div>
+
+        <div>
+            <div class="item-row">
+                <div class="item">
+                    <img class="item-img" src="res/flowers/flower-2.png" alt="" srcset="">
+                    <button class="item-button">Thu nhập</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
