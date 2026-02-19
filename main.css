@@ -240,15 +240,15 @@
 }
 
 .gold-coin-info {
-    left: 65px;
+    left: 60px;
 }
 
 .red-coin-info {
-    left: 125px;
+    left: 120px;
 }
 
 .water-info {
-    left: 195px;
+    left: 185px;
 }
 
 .menu.open {
@@ -393,7 +393,7 @@ button:disabled {
     padding: 35px 5px 0 5px;
 }
 
-#popup-flower-info.menu.open.notify-add-flower {
+#popup-flower-info {
     position: fixed;
     width: 95%;
     max-height: 85vh;
@@ -436,6 +436,7 @@ button:disabled {
 
 .flower-col-info {
     flex: 1;
+    font-size: 16px;
 }
 
 #description {
