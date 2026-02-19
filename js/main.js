@@ -151,17 +151,17 @@ function notifyAddFlowerItem() {
     }
 }
 
-// getDataById(1)
-//     .then(data => {
-//         if (data?.flowers && data?.num_of_placed) {
-//             renderMainScreen()
-//             renderInventoryScreen()
-//         } else {
-//             console.log("Không có dữ liệu")
-//         }
-//     })
+getDataById(1)
+    .then(data => {
+        if (data?.flowers && data?.num_of_placed) {
+            renderMainScreen()
+            renderInventoryScreen()
+        } else {
+            console.log("Không có dữ liệu")
+        }
+    })
 
-renderInventoryScreen()
+// renderInventoryScreen()
 
 function switchScreen(screenId) {
     document.querySelectorAll(".screen").forEach(screen => {
