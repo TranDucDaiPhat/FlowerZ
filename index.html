@@ -164,7 +164,7 @@
     </div>
 
     <!-- INVENTORY SCREEN -->
-    <div id="inventory-screen" class="screen active">
+    <div id="inventory-screen" class="screen ">
         <div>
             <h2 style="text-align: center;">Kho Đồ</h2>
             <button id="btnBackToGame" class="toggle-btn">✕</button>
@@ -222,8 +222,8 @@
     <!-- popup Flower info -->
     <div id="popup-flower-info" class="menu notify-add-flower">
         <button style="width: 35px; height: 35px; padding: 2px;" class="btnCancel close-popup">x</button>
-        <h3>Hoa Tàn Ảnh</h3>
-        <img class="img-info" src="res/flowers/flower-9.png" alt="" srcset="">
+        <h3 id="flower-name">Hoa Tàn Ảnh</h3>
+        <img id="flower-img" class="img-info" src="res/flowers/flower-9.png" alt="" srcset="">
         <div style="width: 100%;">
             <h4 id="toggle-desc">Mô tả:＋</h4>
         </div>
@@ -235,24 +235,28 @@
 
         <div style="display: flex; width: 100%;">
             <div class="flower-col-info">
-                <p>Level hiện tại: 1</p>
-                <p>Thu nhập: 15v/145</p>
-                <p>Lượng nước: 15/55</p>
-                <p>Bậc: D</p>
+                <p id="flower-current-lvl">Level hiện tại: 1</p>
+                <p id="flower-collect">Thu nhập: 15v/145</p>
+                <p id="flower-water">Lượng nước: 15/55</p>
+                <p id="flower-rank">Bậc: D</p>
             </div>
 
             <div class="flower-col-info">
-                <p>Level tối đa: 3</p>
-                <p>Sản xuất: 5v/1h</p>
-                <p>Thời gian tưới: 15p33s</p>
-                <p>Số lượng tối đa: 1/9</p>
+                <p id="flower-max-lvl">Level tối đa: 3</p>
+                <p id="flower-produce">Sản xuất: 5v/1h</p>
+                <p id="flower-recovery-time">Thời gian tưới: 15p33s</p>
+                <p id="flower-max-place">Số lượng tối đa: 1/9</p>
+                <p id="warning" style="color: red;" class="inactive">*Đã đạt số lượng tối đa!</p>
             </div>
         </div>
 
 
         <div style="display: flex; width: 100%; margin-top: 15px; justify-content: space-between;">
-            <button id="btn-add-flower">Thêm</button>
-            <button>Bán</button>
+            <button class="btn" id="btn-sell-flower">Bán</button>
+            <button class="btn" id="btn-add-flower">Thêm</button>
+            <button class="btn" id="btn-storage-flower">Cất Kho</button>
+            <button class="btn" id="btn-collect-flower">Thu Nhập</button>
+            <button class="btn" id="btn-water-flower">Tưới</button>
         </div>
     </div>
 
@@ -263,6 +267,8 @@
             <button class="btnCancel">OK</button>
         </div>
     </div>
+
+    <button id="detail-button">Xem chi tiết</button>
 
     <script type="module" src="./js/main.js"></script>
 </body>

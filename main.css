@@ -154,6 +154,7 @@
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     background: #1c1c1c;
+    display: block;
 }
 
 .add-flower-img {
@@ -444,9 +445,46 @@ button:disabled {
     background-color: rgb(175, 175, 175);
     border-radius: 5px;
     margin-bottom: 5px;
+    border: 1px solid darkgrey;
 }
 
 #toggle-desc {
     padding: 5px 5px 5px 0;
     text-decoration: underline;
+}
+
+.item-img.active {
+    border: 2px solid white;
+}
+
+#detail-button {
+    width: 55vw;
+    height: 45px;
+    font-size: 21px;
+    border-radius: 21px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 25px;
+    display: none;
+
+    z-index: 2000;
+}
+
+#detail-button.active {
+    display: block;
+}
+
+.btn.hidden {
+    display: none;
+}
+
+#warning.inactive {
+    display: none;
+}
+
+.btn:disabled {
+    background-color: #aaa !important;
+    cursor: not-allowed;
+    opacity: 0.6;
 }

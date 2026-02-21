@@ -10,7 +10,7 @@ export function renderMainScreen() {
     const num_of_water = document.getElementById("num-of-water");
     if (!container) return;
 
-    const { flowers = [], num_of_placed = 0 } = user;
+    const { flowers = [] } = user;
 
     let html = "";
     let slots = [];
@@ -18,7 +18,16 @@ export function renderMainScreen() {
     /* =========================
        Thêm các flower đã trồng
     ========================== */
-    flowers.forEach((f,index) => {
+    flowers.forEach((f, index) => {
+        let json = JSON.stringify(f)
+        let escapedJson = json.replace(/"/g, '&quot;');
+        if (f.id == -1) {
+            slots.push(`
+            <div class="item" data-flower="${escapedJson}" data-index="${index}">
+                <img class="empty-flower-img" src="res/icon/empty-flower.png" alt="">
+            </div>`);
+            return;
+        }
         const flowerData = getFlowerById(f.id);
         if (!flowerData) {
             console.warn("Không tìm thấy flower id:", f.id);
@@ -26,30 +35,19 @@ export function renderMainScreen() {
         }
 
         slots.push(`
-            <div class="item" data-index="${index}">
-                <img class="item-img" src="res/flowers/${flowerData.url_image}" alt="">
+            <div class="item" data-flower="${escapedJson}" data-index="${index}">
+                <img class="item-img" src="res/flowers/${flowerData.url_image}" alt="" srcset="">
+                <button class="item-button">Tưới nước</button>
+                <img class="drop" src="res/icon/drop.png" alt="" srcset="">
             </div>
         `);
     });
 
     /* =========================
-       Thêm các ô đã mở nhưng chưa có flower
-    ========================== */
-    const emptyOpenedSlots = num_of_placed - flowers.length;
-
-    for (let i = 0; i < emptyOpenedSlots; i++) {
-        slots.push(`
-            <div class="item">
-                <img class="empty-flower-img" src="res/icon/empty-flower.png" alt="">
-            </div>
-        `);
-    }
-
-    /* =========================
        Nếu còn có thể mua thêm slot → thêm nút add
     ========================== */
-    if (cost_per_place.length > num_of_placed) {
-        const cost = cost_per_place[num_of_placed];
+    if (cost_per_place.length > flowers.length) {
+        const cost = cost_per_place[flowers.length];
         slots.push(`
             <div id="add-flower-item" class="add-flower-item">
                 <img class="empty-flower-img add-flower-img"
@@ -85,7 +83,13 @@ export function renderMainScreen() {
     }
 
     if (num_of_flower && num_of_gold && num_of_red_gold && num_of_water) {
-        num_of_flower.innerHTML = `<p id="num-of-flower">${user.flowers.length}</p>`
+        let num = 0
+        user.flowers.forEach(f => {
+            if (f.id != -1) {
+                num++;
+            }
+        })
+        num_of_flower.innerHTML = `<p id="num-of-flower">${num}</p>`
         num_of_gold.innerHTML = `<p id="num-of-gold">${user.gold}</p>`
         num_of_red_gold.innerHTML = `<p id="num-of-red-gold">${user.red_gold}</p>`
         num_of_water.innerHTML = `<p id="num-of-water">${user.water}/${user.max_water}</p>`
